@@ -1,0 +1,56 @@
+{
+	"name": "webpack4",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "webpack-dev-server  --config webpack.dev.js",
+		"build": "webpack --config webpack.prod.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"clientBundleOutputDir": "../wwwroot/dist",
+	"publicPath": "/dist",
+	"entryPoints": [
+		{
+			"chunkName": "myApp1",
+			"entryPoint": "./src/apps/myapp1/index.tsx",
+			"htmlTemplateFile": "../views/home/myApp1_template.cshtml",
+			"htmlOutputFile": "../views/home/myApp1.cshtml"
+		},
+		{
+			"chunkName": "myApp2",
+			"entryPoint": "./src/apps/myapp2/index.tsx",
+			"htmlTemplateFile": "../views/home/myApp2_template.cshtml",
+			"htmlOutputFile": "../views/home/myApp2.cshtml"
+		}
+	],
+	"devDependencies": {
+		"autoprefixer": "^8.5.2",
+		"babel-cli": "^6.26.0",
+		"babel-core": "^6.26.3",
+		"babel-loader": "^7.1.4",
+		"babel-plugin-syntax-dynamic-import": "^6.18.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react": "^6.24.1",
+		"clean-webpack-plugin": "^0.1.19",
+		"css-loader": "^0.28.11",
+		"extract-text-webpack-plugin": "^4.0.0-beta.0",
+		"file-loader": "^1.1.11",
+		"html-webpack-plugin": "^4.0.0-alpha",
+		"mini-css-extract-plugin": "^0.4.0",
+		"postcss-loader": "^2.1.5",
+		"react": "^16.4.0",
+		"react-dom": "^16.4.0",
+		"style-loader": "^0.21.0",
+		"ts-loader": "^4.4.1",
+		"typescript": "^2.9.1",
+		"webpack": "^4.9.1",
+		"webpack-cli": "^2.1.4",
+		"webpack-dev-server": "^3.1.4",
+		"webpack-merge": "^4.1.2",
+		"write-file-webpack-plugin": "^4.3.2"
+	},
+	"dependencies": {
+		"@types/react": "^16.3.17",
+		"@types/react-dom": "^16.0.6"
+	}
+}

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "MyApp2";
+}
+
+@section Header {
+    <% for (var chunk in htmlWebpackPlugin.files.css) { %>
+   <link href="<%= htmlWebpackPlugin.files.css[chunk].path %>" rel="stylesheet"/>
+    <% } %>
+}
+<h2>MyApp2</h2>
+
+<div id="app"></div>
+
+@section Scripts{
+<% for (var chunk in htmlWebpackPlugin.files.js) { %>
+   <script src="<%= htmlWebpackPlugin.files.js[chunk].path %>"></script>
+<% } %>
+}

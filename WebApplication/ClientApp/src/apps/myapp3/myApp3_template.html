@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <% for (var chunk in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[chunk].path %>" rel="stylesheet" />
+    <% } %>
+
+</head>
+<body>
+    <h2>MyApp3</h2>
+
+    <div id="app"></div>
+
+    <% for (var chunk in htmlWebpackPlugin.files.js) { %>
+    <script src="<%= htmlWebpackPlugin.files.js[chunk].path %>"></script>
+    <% } %>
+</body>
+</html>
