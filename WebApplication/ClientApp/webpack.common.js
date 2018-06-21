@@ -21,7 +21,7 @@ function generateHtmlPlugins() {
 	return entryPointsAppPackageJson.map(obj => {
 		// Create new HTMLWebpackPlugin with options
 		return new HtmlWebpackPlugin({
-			inject: true, //Important! Make it False if you include placeholders inside the tempate
+			inject: false, //Important! Make it False if you include placeholders inside the tempate
 			hash: false,
 			chunks: [obj.chunkName],
 			template: path.join(__dirname, obj.htmlTemplateFile),
@@ -42,6 +42,9 @@ module.exports = {
 		filename: '[name].[hash:4].bundle.js',
 		// `chunkFilename` provides a template for naming code-split bundles (optional)
 		chunkFilename: '[name].[hash:4].bundle_dynamic.js'
+	},
+	resolve: {
+		extensions: ['.js', '.jsx', '.ts', '.tsx']
 	},
 	optimization: {
 		splitChunks: {
